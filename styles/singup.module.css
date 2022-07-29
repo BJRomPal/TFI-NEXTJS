@@ -1,0 +1,79 @@
+.fondoColor {
+    background-color: lightgrey;
+}
+
+.contenedorPrincipal {
+    padding: 5%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.singUpForm {
+    height: calc(80vh - 4vw);
+    width: 48vw;
+    border-radius: 20px 0 0 20px;
+    background-color: white;
+    padding: 2vw;
+}
+
+.formLabel {
+    font-size: 1.5em;
+    margin-bottom: 1rem;
+    font-family: Inter;
+    font-weight: bolder;
+    color: #083359
+}
+
+.inputContainer {
+    font-weight: bold;
+    position: relative;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.input {
+    box-sizing: border-box;
+    border: white;
+    border-bottom: 1.5px solid steelblue;
+    padding: 1.775rem 0.5rem 0.5rem;
+    height: 3.75rem;
+    width: 100%;
+    color: #083359;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.input::placeholder {
+    visibility: hidden;
+    color: #15186D;
+    font-family: Montserrat;
+    font-weight: lighter;
+  }
+
+.input:focus {
+    outline: none;
+  }
+
+.inputLabel {
+    position: absolute;
+    top: 1.375rem;
+    left: 0.5rem;
+    font-size: 1.2em;
+    transition: all 0.25s;
+    color: #083359;
+    font-family: Montserrat
+}
+
+.input:focus + .inputLabel,
+.input:not(:placeholder-shown) + .inputLabel  {
+    font-size: 1rem;
+    top: 0.25rem;
+    transition: all 0.25s;
+    color: #15186D;
+    font-weight: normal;
+  }
