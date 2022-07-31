@@ -62,7 +62,10 @@ const Form = ({ formId, petForm, forNewPet = true }) => {
 
       // Throw error with status code in case Fetch API req failed
       if (!res.ok) {
-        throw new Error(res.status)
+        if (res.status==500) {
+          console.log("email registrado")
+        }
+        //throw new Error(res.status)
       }
 
       router.push('/')
