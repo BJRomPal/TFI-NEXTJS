@@ -7,11 +7,8 @@ import { useRouter } from 'next/router'
 
 
 export default function Singup() {
-
-  
   const router = useRouter();
   const contentType = 'application/json'
-  const [register, setRegister] = useState(false);
   const [errors, setErrors] = useState({})
   const [message, setMessage] = useState('')
   const [emailValid, setEmailValid] = useState(true);
@@ -53,6 +50,7 @@ export default function Singup() {
 
       if (!res.ok) {
         throw new Error(res.status)
+
       }
 
       router.push('/')
@@ -129,7 +127,7 @@ export default function Singup() {
           <button className={style.button} type="submit">Crea tu Cuenta</button>
           <div className={style.divTienesCuenta}>
               <span className={style.TienesCuenta}>¿Ya tienes una cuenta? 
-                <Link href='./signin'>
+                <Link href='/singin'>
                   <a className={style.iniciaSesion}>Inicia Sesión</a>
                 </Link>
               </span>

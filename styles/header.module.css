@@ -18,6 +18,10 @@
     user-select: none;
 }
 
+.headerBotonIniciaApagado{
+    visibility: hidden;
+}
+
 .navStyle {
     display: flex;
     flex-wrap: wrap;
