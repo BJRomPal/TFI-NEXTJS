@@ -47,7 +47,7 @@ export default function Singin() {
         cookies.set("TOKEN", result.data.token, {
           path: '/',
         });
-        sessionStorage.setItem('usuario', result.data.nombre);
+        localStorage.setItem('usuario', result.data.nombre);
         router.push('/');  
       })
       .catch((error) => {

@@ -1,12 +1,12 @@
 .headerLogoLogin {
-    background-color: rgb(234 245 254);
+    background-color: #f2ae2e;
     display:flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 40px 0 20px;
 }
 
-.headerBotonIniciaSesion {
+.botonIniciaSesion {
     background-color: #083359;
     color: #FFFFFF;
     border: 1px solid #083359;
@@ -18,8 +18,51 @@
     user-select: none;
 }
 
-.headerBotonIniciaApagado{
-    visibility: hidden;
+.botonIniciaApagado{
+    display: none;
+}
+
+.botonUsuario{
+    background-color: transparent;
+    color: #083359;
+    border: 2px solid #083359;
+    border-radius: 8px;
+    padding: 3px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+}
+
+.botonUsuario:hover {
+    color: #021321;
+}
+
+.botonUsuarioApagado{
+    display: none;
+}
+
+.profileUsuario{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 16px;
+    position: absolute;
+    line-height: 1.3;
+    right: 55px;
+}
+
+.profileUsuarioApagado{
+    display: none;
+}
+
+.profileUsuarioItems {
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #021321;
+    font-weight: 800;
 }
 
 .navStyle {
@@ -54,6 +97,7 @@
     color: #484747;
     font-weight: 400;
     transition-duration: 2s;
+    text-decoration: underline;
 }
 
 @media screen and (min-width: 0px) and (max-width: 576px) {
