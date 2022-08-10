@@ -5,8 +5,8 @@ import Link from 'next/link';
 import Cookies from 'universal-cookie';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import axios from 'axios';
 import { userService } from '../services/userService';
+
 
 export default function Header() {
 
@@ -15,11 +15,6 @@ export default function Header() {
   const [nombreUsuario, setNombreUsuario] = useState('');
   const [mostrarOpciones, setMostrarOpciones] = useState(false);
   
-
-  const checkLogin = () => {
-    const cookies = new Cookies()
-    const token = cookies.get("TOKEN");
-    }
 
   useEffect(() => {
     const token = userService.checkLogin()
@@ -37,21 +32,12 @@ export default function Header() {
   const irProfile = () => {
     const cookies = new Cookies()
     const token = cookies.get("TOKEN");
-    const configuration = {
-      method: "get",
-      url: 'http://localhost:3000/api/users/auth-endpoint',
-      headers: {
-        Authorization: `Bearer ${token}`
+    if (token) {
+      router.push('/profile');  
       }
-    };
-    axios(configuration)
-      .then(() => {
-        router.push('/profile');  
-      })
-      .catch((error) => {
-        error = new Error();
-        router.push('/singup');
-      })
+    else {
+      router.push('/singin');
+    }
   }
 
   const cerrarSesion = () => {
@@ -61,9 +47,11 @@ export default function Header() {
     const cookies = new Cookies();
     cookies.remove("TOKEN", {path: '/'});
     setMostrarOpciones(false);
-    
-  }
-  
+    const pathname = router.asPath;
+    if(pathname == '/profile' ){
+       router.push('/')
+    }
+  } 
 
   return (
     <header>

@@ -1,0 +1,79 @@
+.contenedorPrincipal {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    width: 70vw;
+    font-family: Montserrat, sans-serif;
+    align-content: center;
+    margin-left: 15vw;
+    border: 2px solid #F24607;
+    border-radius: 10px;
+}
+
+.contenedorImagen{
+    width: 30vw;
+    padding: 20px;
+}
+
+.imagenInmueble {
+    border-radius: 10px;
+}
+
+.contenedorDescripcion{
+    width: 70vw;
+    padding-top: 20px;
+    padding-left: 30px;
+}
+
+.tipoOperacion{
+    font-size: 2.2vw;
+    font-weight: bolder;
+    color: #083359;
+    line-height: 24px
+}
+
+.descripcionPrincipal {
+    font-size: 3.4vw;
+    color: #F24607;
+    font-weight: bolder;
+    margin: 20px 0 20px 0;
+}
+
+.contenedorDatos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 10vw;
+    line-height: 3.5vh;
+    font-weight: bold;
+}
+
+.barrio {
+    color: #F24607;
+    padding-bottom: 2vh;
+    font-size: 1.3vw;
+}
+
+.precio {
+    font-size: 1.2vw;
+}
+
+.inmobiliaria {
+    font-size: 1.3vw;
+    border: 2px solid #083359;
+    border-radius: 8px;
+    padding: 0.9vw 1.5vw 0 0.7vw;
+}
+
+.contenedorIconos{
+    display: flex;
+    flex-direction: row;
+    padding-top: 3vh;
+    align-items: center;
+}
+
+.cantidad{
+    padding: 0 1vw 0 1vw;
+    font-weight: 800;
+    font-size: 1.2vw;
+}

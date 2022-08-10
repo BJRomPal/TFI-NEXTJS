@@ -9,6 +9,7 @@
     "axios": "^0.27.2",
     "bcrypt": "^5.0.1",
     "embla-carousel": "^7.0.0",
+    "embla-carousel-react": "^7.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.11",
     "next": "latest",
