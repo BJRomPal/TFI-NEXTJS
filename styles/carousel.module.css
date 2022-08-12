@@ -1,11 +1,41 @@
+.titleContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title{
+  font-family: Montserrat, sans-serif;
+  font-size: 3vw;
+  color: #F24607;
+}
+
 .embla {
   overflow: hidden;
 }
 
-.embla__container {
+.emblaContainer {
   display: flex;
 }
 
-.embla__slide {
-  flex: 0 0 100%;
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  padding-top: 2vh;
+}
+
+.buttonYellow {
+  margin: 0 10px 0 10px;
+  padding-right: 60px;
+  padding-top: 6px;
+  border: 1px solid #f2ae2e;
+  border-radius: 4px;
+  background-color: #f2ae2e;
+}
+
+.buttonGrey {
+  margin: 0 3px 0 3px;
+  border: 1px solid #b8b5b5;
+  background-color: #b8b5b5;
+  border-radius: 4px;
 }

@@ -1,5 +1,6 @@
 const destacados = [
     {
+        id: '1',
         operacion: 'Venta',
         descripcion: 'Departamento de 3 ambientes',
         barrio: 'Belgrano',
@@ -10,6 +11,7 @@ const destacados = [
         ambientes: 3,
         dormitorios: 2
     }, {
+        id: '2',
         operacion: 'Venta',
         descripcion: 'Departamento de 2 ambientes',
         barrio: 'Palermo',
@@ -20,6 +22,7 @@ const destacados = [
         ambientes: 2,
         dormitorios: 1
     }, {
+        id: '3',
         operacion: 'Alquiler',
         descripcion: 'Departamento de 4 ambientes',
         barrio: 'Puerto Madero',
@@ -30,6 +33,7 @@ const destacados = [
         ambientes: 4,
         dormitorios: 3
     }, {
+        id: '4',
         operacion: 'Venta',
         descripcion: 'Departamento de 4 ambientes',
         barrio: 'Montserrat',
@@ -40,6 +44,7 @@ const destacados = [
         ambientes: 4,
         dormitorios: 4
     }, {
+        id: '5',
         operacion: 'Venta',
         descripcion: 'Departamento de 1 ambiente',
         barrio: 'Palermo',
