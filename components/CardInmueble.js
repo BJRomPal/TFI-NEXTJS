@@ -9,7 +9,7 @@ export default function CardInmueble(props) {
           <Image
           className={cardStyle.imagenInmueble}
           alt="Imagen Inmueble"
-          src={`/imagenes/${props.foto}.jpg`}
+          src={`/imagenes/inmuebles/${props.foto}.jpg`}
           width={330}
           height={330}
           />

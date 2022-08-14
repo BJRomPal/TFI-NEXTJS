@@ -1,0 +1,71 @@
+.contendorPost {
+    width: 60vw;
+    display: flex;
+    margin-top: 4vh;
+    margin-left: 4vw;
+    border: 2px solid #F2AE2E;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.contenedorDatosPost {
+    width: 60vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-family: Montserrat, sans-serif;
+}
+
+.datosAutor {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 3vh;
+}
+
+.imagenAutor {
+    border-radius: 40px;
+}
+
+.nombreAutor {
+    font-size: 1.4vw;
+    padding-left: 1.2vw;
+}
+
+.tituloPost {
+    color: #083359;
+    font-size: 2vw;
+    line-height: 20px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+
+.subtituloPost{
+    font-size: 1.2vw;
+    font-weight: 800;
+    line-height: 30px;
+    margin-bottom: 2vh;
+}
+
+.infoPost {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-weight: bold;
+    padding-top: 4vh;
+}
+
+.fechaPost {
+    padding-right: 10px;
+}
+
+.temaPost {
+    padding-left: 10px;
+}
+
+.imagenPost {
+    border-radius: 5px;
+}
+
+
+

@@ -1,0 +1,32 @@
+.contenedorPrincipal {
+    font-family: Montserrat, sans-serif;
+    background-color: #BFBCBA;
+    padding-top: 20px;
+}
+
+.elementosFooter {
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 15px;
+}
+
+.columnas {
+    font-size: 1.2rem;
+}
+
+.titulos {
+    font-weight: bold;
+}
+
+.barraFinal {
+    background-color: #787575;
+    padding: 10px 0;
+}
+
+.copyright {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: right;
+    margin-right: 10px;
+}

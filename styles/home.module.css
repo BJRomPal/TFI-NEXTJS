@@ -1,0 +1,17 @@
+.divPosts {
+    display: flex;
+    flex-direction: row;
+    margin-top: 7vh;
+    margin-bottom: 20px;
+}
+
+.divCardPosts {
+    height: 100%;
+}
+
+.notas {
+    font-family: Montserrat, sans-serif;
+    font-size: 2.5rem;
+    color: #F24607;
+    text-align: center;
+}

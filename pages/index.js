@@ -1,7 +1,10 @@
 import Head from 'next/head';
 import Header from '../components/Header'
 import Carousel from 'components/Carousel';
-import CardInmueble from 'components/CardInmueble';
+import CardPost from 'components/CardPost';
+import PostDestacado from 'components/PostDestacado';
+import styleHome from '../styles/home.module.css';
+import Footer from 'components/Footer';
 
 
 export default function Home() {
@@ -17,6 +20,19 @@ export default function Home() {
       </Head>
       <Header />
       <Carousel/>
+      <div className={styleHome.divPosts}>
+        <div className={styleHome.divCardPosts}>
+          <h1 className={styleHome.notas}>Últimas notas</h1>
+          <CardPost />
+          <CardPost />
+          <CardPost />
+        </div>
+        <div className={styleHome.divNotaDestacada}>
+          <h1 className={styleHome.notas}>Nota Destacada</h1>
+          <PostDestacado />
+        </div>  
+      </div>
+      <Footer />
     </>
   )
 }
