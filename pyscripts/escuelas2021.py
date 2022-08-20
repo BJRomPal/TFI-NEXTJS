@@ -3,13 +3,14 @@ import pandas as pd
 import pymongo
 import json
 
-
+#  Los datos de las escuelas estaba en un archivo geojson que se abrio en UTF-8 para compatibilidad con el Español
 with open('escuelas.geojson', encoding='utf-8') as f:
     data = json.load(f)
 
+# Se separó los datos que vamos a usar que están en features.
 escuelas = data['features']
 
-
+# Se crearon las listas de coordenadas. 
 lista_coordenadas = []
 for i in range(len(escuelas)):
     coordenada = escuelas[i]['geometry']['coordinates']
@@ -25,15 +26,18 @@ for i in range(len(series_coordenadas)):
     except:
         lista_coordenadas_final.append(coordenada)  
 
+# De una escuela no aparecen las coordendas. Se buscaron manualmente en Google Maps y se agregan a la misma.
 coordenada_perdida = [-58.40348722884395, -34.58350102178689]
 lista_coordenadas_final[2254].append(-58.40348722884395)
 lista_coordenadas_final[2254].append(-34.58350102178689)
 
+# Se crea el listado geom con el formato requerido por MongoDB
 listado_geom = []
 for lista in lista_coordenadas_final:
     dic = {'type': 'Point', 'coordinates': lista}
     listado_geom.append(dic)
 
+# Se crean el resto de las listas.
 lista_calles = []
 for i in range(len(escuelas)):
     calle = escuelas[i]['properties']['dom_edific']
@@ -54,6 +58,7 @@ for i in range(len(escuelas)):
     dependencia = escuelas[i]['properties']['depfun']
     lista_dependencia.append(dependencia)
 
+# Se establece dinamicamente cuando una escuela es de gestión privada o publica.
 lista_dependencia_normalizada = []
 for item in lista_dependencia:
     if item == 'Dirección General de Educación de Gestión Privada':
@@ -66,6 +71,7 @@ for i in range(len(escuelas)):
     barrio = escuelas[i]['properties']['barrio']
     lista_barrio.append(barrio.title())
 
+# Se crea el listado de escuelas a partir de la información eliminando aquellas duplicadas
 dic_escuelas = []
 listado_duplicados = []
 for i in range(len(lista_barrio)):
@@ -82,14 +88,8 @@ from pymongo import MongoClient
 
 # ACA VA LA URI DE MONGO DB QUE POR SEGURIDAD FUE BORRADA
 
-try:
-    print(client.server_info())
-except Exception:
-    print("Unable to connect to the server.")
-
+# Se carga la información en MongoDB
 db = client['hogarDB']
-
 collection = db['escuelas']
-
 collection.insert_many(dic_escuelas)
 

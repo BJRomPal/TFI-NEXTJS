@@ -3,7 +3,7 @@ import pandas as pd
 import pymongo
 from pymongo import MongoClient
 
-
+# delitos2021.csv fue creado de manera manual a partir de los datos obtenidos de un informe elaborada por el GCBA
 
 data = pd.read_csv('delitos2021.csv', delimiter=';', encoding='utf-8')
 dict_data = data.to_dict(orient='records')

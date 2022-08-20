@@ -2,9 +2,11 @@ import numpy as np
 import pandas as pd
 import pymongo
 
+# Lectura del dataset en utf-8 para que lea bien los datos en español. Los hospitales están en dos datasets diferentes
 df_privados = pd.read_csv('Hprivados.csv', delimiter=',', encoding='utf-8')
 df_publicos = pd.read_csv('Hpublicos.csv', delimiter=',', encoding='utf-8')
 
+# Las direcciones están separadas en calle y número por lo que se unen en la misma columna.
 direcciones = []
 for i in range(len(df_privados)):
     direccion = df_privados['calle'][i] + " " + str(df_privados['altura'][i])
@@ -12,11 +14,13 @@ for i in range(len(df_privados)):
 
 df_privados['direccion'] = direcciones
 
+# Se hace lo mismo con los públicos.
 direcciones_publicos = []
 for i in range(len(df_publicos)):
     direccion = df_publicos['CALLE'][i] + ' ' + str(df_publicos['ALTURA'][i])
     direcciones_publicos.append(direccion)
 
+# Se buscan manualmente los barrios de los hospitales públicos ya que no están en el dataset. 
 lista_barrios = [
     'Barracas',
     'Recoleta',
@@ -56,8 +60,10 @@ lista_barrios = [
     'Barracas'
 ]
 
+# Se agrega la dirección que falta de un hospital público.
 direcciones_publicos[-3] = 'AV GENERAL FRANCISCO FERNANDEZ DE LA CRUZ 4402'
 
+# se agregan las direcciones, barrios y coordenadas.
 df_publicos['direccion'] = direcciones_publicos
 df_publicos['barrio'] =lista_barrios
 
@@ -100,6 +106,7 @@ coordenadas_publicos = [
 [-58.3814293381891, -34.6419888014928]
 ]
 
+# Se obtienen las coordenadas de los privados.
 coordenadas_privados = []
 for i in range(len(df_privados)):
     long = df_privados['long'][i]
@@ -111,6 +118,7 @@ for i in range(len(df_privados)):
 df_privados['administracion'] = 'Privada'
 df_publicos['administracion'] = 'Publico'
 
+# se unen en unas mismas listas a los públicos y privados. 
 lista_nombres = []
 lista_administracion =[]
 lista_barrios =[]
@@ -136,6 +144,7 @@ for lista in lista_coordenadas:
     dic = {'type': 'Point', 'coordinates': lista}
     listado_geom.append(dic)
 
+# Se crea una lista que contendrá dicts, formato requerido para pymongo para subir a MongoDB
 dic_hospitales = []
 for i in range(len(lista_barrios)):
     hospital = {'nombre': lista_nombres[i], 'domicilio' : lista_direcciones[i], 'barrio' : lista_barrios[i], 
@@ -144,7 +153,9 @@ for i in range(len(lista_barrios)):
 
 
 from pymongo import MongoClient
+# SE BORRÓ POR SEGURIDAD LA CONEXIÓN A LA BASE DE DATOS
 
+#Subida de datos a MongoDB
 db = client['hogarDB']
 collection = db['hospitales']
 collection.insert_many(dic_hospitales)
