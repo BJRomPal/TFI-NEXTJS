@@ -32,6 +32,7 @@ export default function Home() {
           <PostDestacado />
         </div>  
       </div>
+      
       <Footer />
     </>
   )
