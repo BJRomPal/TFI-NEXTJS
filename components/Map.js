@@ -30,7 +30,7 @@ export default function Map(props) {
     fetchData('universidades', data).then((result) => setUniversidades(result.data));
     fetchData('cultural', data).then((result) => setCultural(result.data));
     fetchData('gastronomia', data).then((result) => setGastronomia(result.data));
-    fetchApi({"id" : "630d7e2158596ddf0b2f3a86"}).then((result) => {setApi(result.data), console.log(api)})
+    fetchApi({"id" : "630d7e2158596ddf0b2f3a86"}).then((result) => setApi(result.data));
   }, [])
 
 
