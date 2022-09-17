@@ -12,8 +12,6 @@ async function fetchData() {
   return await axios(configuration)
 }
 
-const Barrio = "Colegiales";
-
 const width = 960;
 const height = 900;
 const margin = {
@@ -25,7 +23,7 @@ const margin = {
 const innerHeight = height - margin.top - margin.bottom;
 const innerWidth = width - margin.right - margin.left;
 
-export default function Barchart() {
+export default function Barchart({Barrio, titulo, delito}) {
   const [data, setData] = useState(null);
   
   useEffect(() => {
@@ -46,12 +44,12 @@ export default function Barchart() {
   }
 
   const yScale = scaleBand()
-    .domain(data.map(d => d.barrio))
+    .domain(data.map(d => d['barrio']))
     .range([0, innerHeight])
     .padding(.15)
 
   const xScale = scaleLinear()
-    .domain([0, max(data, d => d.homicidios)])
+    .domain([0, max(data, d => d[delito])])
     .range([0, innerWidth])
 
   return (
@@ -59,7 +57,7 @@ export default function Barchart() {
       <defs>
         <style type="text/css">@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap");</style>
       </defs>
-      <text x={width / 2.2} y={60} style={{fontSize : "1.6em", fill: "#F24607", fontFamily: "Montserrat", fontWeight: "bold"}}>Homicidios Totales 2021</text>
+      <text x={margin.left} y={60} style={{fontSize : "1.6em", fill: "#F24607", fontFamily: "Montserrat", fontWeight: "bold"}}>{titulo}</text>
       <g transform={`translate(${margin.left}, ${margin.top})`}>
       {xScale.ticks().map(tickValue => (
         <g key={tickValue} transform={`translate(${xScale(tickValue)}, 0)`}>
@@ -80,7 +78,7 @@ export default function Barchart() {
         key={d.barrio} 
         x={0} 
         y={yScale(d.barrio)} 
-        width={xScale(d.homicidios)} 
+        width={xScale(d[delito])} 
         height={yScale.bandwidth()}
         fill={d.color} 
         />)}

@@ -7,11 +7,11 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
-export default function Map(props) {
+export default function Map({latitud, longitud}) {
 
   const data = {
-    longitud: props.longitud, 
-    latitud: props.latitud}
+    longitud: longitud, 
+    latitud: latitud}
 
   const [comisarias, setComisarias] = useState([]);
   const [hospitales, setHospitales] = useState([]);
@@ -20,7 +20,7 @@ export default function Map(props) {
   const [universidades, setUniversidades] = useState([]);
   const [cultural, setCultural] = useState([]);
   const [gastronomia, setGastronomia] = useState([]);
-  const [api, setApi] = useState('')
+  const [api, setApi] = useState(null)
 
   useEffect(() => {
     fetchData('comisarias', data).then((result) => setComisarias(result.data));
@@ -33,18 +33,22 @@ export default function Map(props) {
     fetchApi({"id" : "630d7e2158596ddf0b2f3a86"}).then((result) => setApi(result.data));
   }, [])
 
+  if(!api) {
+    return <pre>Cargando...</pre>
+  }
+
 
   return (
-    <MapContainer center={[props.latitud, props.longitud]} 
+    <MapContainer center={[latitud, longitud]} 
       zoom={14}
       scrollWheelZoom={false} 
       style={{height: 500, width: 500}}>
       <TileLayer
         attribution='Map data &copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors, <a href=&quot;https://creativecommons.org/licenses/by-sa/2.0/&quot;>CC-BY-SA</a>, Imagery &copy; <a href=&quot;https://www.mapbox.com/&quot;>Mapbox</a>'
-        url={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/256/{z}/{x}/{y}@2x?access_token=MYTOKEN`}
+        url={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/256/{z}/{x}/{y}@2x?access_token=${api.token}`}
         />
       <Marker 
-      position={[props.latitud, props.longitud]}
+      position={[latitud, longitud]}
       draggable={true}
       animate={true}
       >
