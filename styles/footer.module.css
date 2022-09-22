@@ -30,3 +30,23 @@
     text-align: right;
     margin-right: 10px;
 }
+
+@media screen and (min-width: 0px) and (max-width: 576px) {
+
+    .contenedorPrincipal {
+        padding-top: 10px;
+    }
+
+    .contenedorLogo{
+        width: 100px;
+        margin-left: calc(40vh /2);
+    }
+
+    .columnas {
+        font-size: 0.7rem;
+    }
+
+    .copyright {
+        font-size: 0.8rem;
+    }
+}

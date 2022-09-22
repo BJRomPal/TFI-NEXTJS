@@ -1,0 +1,136 @@
+.embla {
+  position: relative;
+  background-color: #f7f7f7;
+  padding: 20px;
+  max-width: 670px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.emblaViewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.emblaContainer {
+  display: flex;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  margin-left: -10px;
+}
+
+.emblaSlide {
+  padding-left: 10px;
+  min-width: 100%;
+  position: relative;
+}
+
+.emblaSlideInner {
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+}
+
+.emblaSlideImg {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 390px;
+  transform: translate(-50%, -50%);
+  padding-bottom: 20px;
+}
+
+.emblaThumb {
+  position: relative;
+  background-color: #f7f7f7;
+  padding: 20px;
+  max-width: 670px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 0;
+  margin-top: -12px;
+}
+
+.emblaContainerThumb {
+  display: flex;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  margin-left: -10px;
+  cursor: default;
+  margin-left: -8px;
+}
+
+.textContainer{
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  color: #F24607;
+}
+
+/* Estilos de las fotos en miniatura */
+
+.emblaSlideThumb {
+  min-width: 100%;
+  position: relative;
+  padding-left: 8px;
+  min-width: 20%;
+}
+
+.emblaSlideThumbSelected {
+  min-width: 100%;
+  position: relative;
+  padding-left: 8px;
+  min-width: 20%;
+  opacity: 1;
+}
+
+.emblaSlideInnerThumb {
+  touch-action: manipulation;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  height: 100px;
+  width: 100%;
+  background-color: transparent;
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.emblaSlideThumbnail {
+  position: absolute;
+  opacity: 1;
+  top: 0;
+  bottom: 0;
+  left: -10000%;
+  right: -10000%;
+  margin: auto;
+  min-width: 1000%;
+  min-height: 1000%;
+  max-width: none;
+  transform: scale(0.1);
+  transition: opacity 0.2s;
+}
+
+.emblaSlideThumbnailSelected {
+  position: absolute;
+  opacity: 1;
+  top: 0;
+  bottom: 0;
+  left: -10000%;
+  right: -10000%;
+  margin: auto;
+  min-width: 1000%;
+  min-height: 1000%;
+  max-width: none;
+  transform: scale(0.1);
+  transition: opacity 0.2s;
+}

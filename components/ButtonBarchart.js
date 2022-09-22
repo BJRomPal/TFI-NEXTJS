@@ -27,7 +27,6 @@ export default function ButtonBarchart( {barrio} ) {
   }
 
   const [component, setComponent] = useState(charts.homicidios)
-  console.log(component);
   const cambiarChart1 = () => {
       setComponent(charts.homicidios);
   }

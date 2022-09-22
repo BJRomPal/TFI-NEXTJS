@@ -1,26 +1,31 @@
 import Image from "next/image";
 import cardStyle from '../styles/cardinmueble.module.css'
+import Link from "next/link";
 
 export default function CardInmueble(props) {
   return (
     <div className={cardStyle.contenedorCardInmueble}>
       <div className={cardStyle.contenedorPrincipal}>
         <div className={cardStyle.contenedorImagen}>
-          <Image
-          className={cardStyle.imagenInmueble}
-          alt="Imagen Inmueble"
-          src={`/imagenes/inmuebles/${props.foto}.jpg`}
-          width={330}
-          height={330}
-          />
+          <Link href={`/[id]/?id=${props.id}`} as={`/${props.id}`}>
+            <Image
+            className={cardStyle.imagenInmueble}
+            alt="Imagen Inmueble"
+            src={props.foto}
+            width={280}
+            height={280}
+            />
+          </Link>
         </div>
         <div className={cardStyle.contenedorDescripcion}>
-          <h2 className={cardStyle.tipoOperacion}>{props.operacion}</h2>
-          <h1 className={cardStyle.descripcionPrincipal}>{props.descripcion}</h1>
+          <h2 className={cardStyle.tipoOperacion}>{props.operacion.toUpperCase()}</h2>
+          <Link href={`/[id]/?id=${props.id}`} as={`/${props.id}`}>
+            <h1 className={cardStyle.descripcionPrincipal}>{props.descripcion}</h1>
+          </Link>
           <div className={cardStyle.contenedorDatos}>
             <div className={cardStyle.contendorBarrioPrecio}>
               <p className={cardStyle.barrio}>{props.barrio}</p>
-              <p className={cardStyle.precio}>{props.precio}</p>
+              <p className={cardStyle.precio}>{props.moneda + " " + props.precio}</p>
             </div>
             <p className={cardStyle.inmobiliaria}>{props.vendedor}</p>
           </div>

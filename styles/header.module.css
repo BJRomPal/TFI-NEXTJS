@@ -101,6 +101,19 @@
 }
 
 @media screen and (min-width: 0px) and (max-width: 576px) {
+
+    .headerLogoLogin {
+        display: flex;
+        justify-content: flex-start;
+        padding: 0;
+    }
+
+    .botonIniciaSesion{
+        font-size: 20px;
+        border-radius: 0px;
+
+    }
+
     .AppLogo {
         max-width: 40%;
         max-height: 40%;

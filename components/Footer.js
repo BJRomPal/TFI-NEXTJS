@@ -5,7 +5,7 @@ import Image from 'next/image';
 export default function Footer() {
   return (
     <div className={footerStyle.contenedorPrincipal}>
-      <div>
+      <div className={footerStyle.contenedorLogo}>
         <Image
           priority
           src={logo}

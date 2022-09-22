@@ -46,8 +46,8 @@ export default async function handler(request, response) {
                 titulo: request.body.titulo,
                 descripcion: request.body.descripcion,
                 fotos: request.body.fotos,
-                ameneties: request.body.ameneties,
-                destacado: true
+                fotoPrincipal: request.body.fotoPrincipal,
+                ameneties: request.body.ameneties
             });
             inmueble.save(); //funcion de moongose que graba el usuario como documento en la db
             const aviso = new Aviso({
@@ -60,7 +60,8 @@ export default async function handler(request, response) {
                 monedaOperacion: request.body.monedaOperacion,
                 montoOperacion: request.body.montoOperacion,
                 nombreAnunciante: request.body.nombreAnunciante,
-                mailContacto: request.body.mailContacto
+                mailContacto: request.body.mailContacto,
+                destacado: false
             })
             aviso.save()
             .then((result) => {

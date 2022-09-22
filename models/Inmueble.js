@@ -99,12 +99,10 @@ const inmuebleSchema = new mongoose.Schema({
             maxlength: 50
         }
     }],
-    ameneties: [String],
-    destacado: {
-        type: Boolean,
-        default: false
-    }
+    fotoPrincipal: {
+        type: String
+    },
+    ameneties: [String]
 });
 
-const Inmueble = mongoose.models['inmueble'] || mongoose.model("inmueble", inmuebleSchema);
-module.exports = Inmueble;
+export default mongoose.models.Inmueble || mongoose.model("Inmueble", inmuebleSchema);

@@ -53,7 +53,7 @@ export default function Map({latitud, longitud}) {
       animate={true}
       >
         <Popup>
-          Casa Mariano
+          Inmueble Aviso
         </Popup>
       </Marker>
       <LayersControl position='topright'>

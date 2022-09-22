@@ -1,75 +1,75 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'
-import Link from 'next/link'
-import dbConnect from '../../lib/dbConnect'
-import Pet from '../../models/Pet'
+import Header from 'components/Header';
+import Footer from 'components/Footer';
+import ButtonBarchart from 'components/ButtonBarchart';
+import CarouselFotos from 'components/CarouselFotos';
+import styles from '../../styles/indexId.module.css';
+import axios from 'axios';
+import dynamic from "next/dynamic"
 
-/* Allows you to view pet card info and delete pet card*/
-const PetPage = ({ pet }) => {
+const AvisoPage = () => {
+  const Map = dynamic(() => import("../../components/Map"), { ssr:false });
   const router = useRouter()
-  const [message, setMessage] = useState('')
-  const handleDelete = async () => {
-    const petID = router.query.id
-
-    try {
-      await fetch(`/api/pets/${petID}`, {
-        method: 'Delete',
-      })
-      router.push('/')
-    } catch (error) {
-      setMessage('Failed to delete the pet.')
-    }
+  const [aviso, setAviso] = useState(null); 
+  useEffect(() => {
+    fethAviso({"id" : router.query.id}).then((result) => setAviso(result.data));
+  }, [])
+  console.log(router.query.id);
+  console.log(aviso);
+  if(!aviso) {
+    return <pre>Cargando...</pre>
   }
+  const latitud = parseFloat(aviso.inmueble_id.direccion.position.coordinates[1]);
+  const longitud = parseFloat(aviso.inmueble_id.direccion.position.coordinates[0]);
+
 
   return (
-    <div key={pet._id}>
-      <div className="card">
-        <img src={pet.image_url} />
-        <h5 className="pet-name">{pet.name}</h5>
-        <div className="main-content">
-          <p className="pet-name">{pet.name}</p>
-          <p className="owner">Owner: {pet.owner_name}</p>
-
-          {/* Extra Pet Info: Likes and Dislikes */}
-          <div className="likes info">
-            <p className="label">Likes</p>
-            <ul>
-              {pet.likes.map((data, index) => (
-                <li key={index}>{data} </li>
-              ))}
-            </ul>
+    <>
+      <Header />
+      <div className={styles.cuerpo} key={aviso._id}>
+        <div className={styles.contenedorCarrousel}>
+          <div className={styles.carrousel}>
+            <CarouselFotos 
+              fotos = {aviso.inmueble_id.fotos}
+            />
           </div>
-          <div className="dislikes info">
-            <p className="label">Dislikes</p>
-            <ul>
-              {pet.dislikes.map((data, index) => (
-                <li key={index}>{data} </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="btn-container">
-            <Link href="/[id]/edit" as={`/${pet._id}/edit`}>
-              <button className="btn edit">Edit</button>
-            </Link>
-            <button className="btn delete" onClick={handleDelete}>
-              Delete
-            </button>
-          </div>
+          <div className={styles.datosOperacion}>
+            <p>{aviso.operacion.toUpperCase()}</p>
+            <p>{aviso.monedaOperacion + ' ' + aviso.montoOperacion}</p>
+          </div>  
         </div>
+        <Map 
+          latitud= {latitud}
+          longitud= {longitud}
+        />
+        <ButtonBarchart 
+          barrio={aviso.inmueble_id.direccion.barrio}
+        />
       </div>
-      {message && <p>{message}</p>}
-    </div>
+      <Footer />
+    </>
   )
 }
 
+/*
 export async function getServerSideProps({ params }) {
   await dbConnect()
+  const aviso = await Aviso.findById(params.id).populate({path: 'inmueble_id'}).lean() 
 
-  const pet = await Pet.findById(params.id).lean()
-  pet._id = pet._id.toString()
-
-  return { props: { pet } }
+  console.log(aviso.inmueble_id.direccion.position.coordinates[0]);
+  return { props: { aviso : JSON.parse(JSON.stringify(aviso))} }
+}
+*/
+async function fethAviso(id) {
+  const configuration = {
+    method: "post",
+    url: 'http://localhost:3000/api/inmuebles/[id]',
+    data: id,
+    contentType: 'application/json',
+    Accept: 'application/json',
+  };
+    return await axios(configuration)
 }
 
-export default PetPage
+export default AvisoPage

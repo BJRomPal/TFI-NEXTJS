@@ -2,45 +2,84 @@
     "tipo": "casa",
     "casa": "9,20 x 22,80",
     "direccion": {
-                    "calle": "Baez",
-                    "altura": 565
+                    "calle": "Andonaegui",
+                    "altura": 2200
                 },
-    "antiguedad": 14,
+    "antiguedad": 44,
     "supTotal": 234,
-    "supCubierta": 123,
-    "cantAmbientes": 3,
+    "supCubierta": 163, 
+    "cantAmbientes": 5,
     "ambientes": [{
-        "medidas": "4x3",
-        "tipo": "Dormitorio1"
+        "medidas": "4x5",
+        "tipo": "dormitorio1"
     },
     {
-        "medidas": "3x3",
-        "tipo": "Dormitorio2"
+        "medidas": "3x4",
+        "tipo": "dormitorio2"
     },{
-        "medidas": "6x3",
-        "tipo": "Living"
-    }
-    ],
-    "dormitorios": 2,
-    "banos": 1,
-    "cochera": false,
-    "titulo": "Espectacular 3 ambientes",
-    "descripcion": "Amplio tres ambientes ubicado en la mejor zona de la avenida Santa Fe, bla bla bla",
+        "medidas": "6x4",
+        "tipo": "living"
+    },{
+        "medidas": "3x4",
+        "tipo": "dormitorio2"
+    },{
+        "medidas": "3x4",
+        "tipo": "dormitorio2"
+    } ],
+    "dormitorios": 4,
+    "banos": 3,
+    "cochera": true,
+    "tipoCochera": {
+        "cantidad": 1,
+        "tipo": "cubierta"     
+    },
+    "titulo": "Espectacular Casa de 5 ambientes",
+    "descripcion": "Casa ubicada en Villa Urquiza con amplio hall de entrada, espacioso living y 4 dormitorios. Uno princpial en suite y los demas con baño compartido. Tiene cochera cubierta y un jardín espectacular. Gran iluminación.",
     "fotos": [{
-        "url": "URL1",
-        "descripcion": "foto1"
+        "url": "/imagenes/inmuebles/vestibulo.jpg",
+        "descripcion": "Frente de la casa"
         },{
-            "url": "URL2",
-            "descripcion": "foto2"
+            "url": "/imagenes/inmuebles/comedor1.jpg",
+            "descripcion": "Comerdor de la casa"
         },{
-            "url": "URL3",
-            "descripcion": "foto3"
+            "url": "/imagenes/inmuebles/cocina.jpg",
+            "descripcion": "Cocina del Inmueble"
+        },{
+            "url": "/imagenes/inmuebles/dormitorioSuite1.jpg",
+            "descripcion": "Dormitorio Principal"
+        },{
+            "url": "/imagenes/inmuebles/banoSuite.jpg",
+            "descripcion": "Baño del dormitorio principal"
+        },{
+            "url": "/imagenes/inmuebles/dormitorio2.jpg",
+            "descripcion": "Segundo dormitorio del inmueble"
+        },{
+            "url": "/imagenes/inmuebles/dormitorio3.jpg",
+            "descripcion": "Tercer dormitorio del inmueble"
+        },{
+            "url": "/imagenes/inmuebles/dormitorio4.jpg",
+            "descripcion": "Cuarto dormitorio del inmueble"
+        },{
+            "url": "/imagenes/inmuebles/bano2.jpg",
+            "descripcion": "Segundo baño del inmueble"
+        },{
+            "url": "/imagenes/inmuebles/garageCasa.jpg",
+            "descripcion": "Garage del inmueble"
+        },{
+            "url": "/imagenes/inmuebles/jardinCasa.jpg",
+            "descripcion": "Jardin de la Casa"
+        },{
+            "url": "/imagenes/inmuebles/banoToilette.jpg",
+            "descripcion": "Toilette de la Casa"
         }],
-    "ameneties": ["gimanasio", "Solarium", "Parrilla"],
+    "fotoPrincipal": "/imagenes/inmuebles/jardinCasa.jpg",
+    "ameneties": ["jardin", "Parrilla", "Terreno Propio"],
     "usuario_id": "62c74af6982fe02f1c846133",
     "operacion": "venta",
     "monedaOperacion": "U$S",
-    "montoOperacion": 90000
+    "montoOperacion": 280000,
+    "nombreAnunciante": "Inmobiliaria Montoto",
+    "mailContacto": "montoto@montoto.com.ar"
 }
 {
     "tipo": "departamento",
@@ -61,14 +100,14 @@
     "cantAmbientes": 3,
     "ambientes": [{
         "medidas": "4x4",
-        "tipo": "Dormitorio1"
+        "tipo": "dormitorio1"
     },
     {
         "medidas": "3x3",
-        "tipo": "Dormitorio2"
+        "tipo": "dormitorio2"
     },{
         "medidas": "6x6",
-        "tipo": "Living-Comedor-Cocina"
+        "tipo": "living-comedor-cocina"
     }
     ],
     "dormitorios": 2,
@@ -81,15 +120,37 @@
     "titulo": "Espectacular 3 ambientes con cochera",
     "descripcion": "Amplio tres ambientes ubicado en las cañitas. Edificio de 14 años con amplio véstibulo y jardín. La unidad cuenta con dos dormitorios, el principal en suite y con vestidor. Amplio living-comedor con buena iluminación todo el día. La cocina está integrada al comedor y cuenta con lavadero separado. El balcón es amplio y tiene vista a la calle.",
     "fotos": [{
-        "url": "URL1",
-        "descripcion": "foto1"
+        "url": "/imagenes/inmuebles/vestibulo.jpg",
+        "descripcion": "Vestibulo del edificio"
         },{
-            "url": "URL2",
-            "descripcion": "foto2"
+            "url": "/imagenes/inmuebles/cocinaComerdoLiving.jpg",
+            "descripcion": "Living Comedor con cocina integrada"
         },{
-            "url": "URL3",
-            "descripcion": "foto3"
+            "url": "/imagenes/inmuebles/lavadero.jpg",
+            "descripcion": "Lavadero del inmueble"
+        },{
+            "url": "/imagenes/inmuebles/vistaBalcon.jpg",
+            "descripcion": "Balcon del inmueble"
+        },{
+            "url": "/imagenes/inmuebles/dormitorioSuite1.jpg",
+            "descripcion": "Dormitorio Principal"
+        },{
+            "url": "/imagenes/inmuebles/vestidor1.jpg",
+            "descripcion": "Vestidor del dormitorio principal"
+        },{
+            "url": "/imagenes/inmuebles/banoSuite.jpg",
+            "descripcion": "Baño del dormitorio principal"
+        },{
+            "url": "/imagenes/inmuebles/dormitorio2.jpg",
+            "descripcion": "Segundo dormitorio del inmueble"
+        },{
+            "url": "/imagenes/inmuebles/bano2.jpg",
+            "descripcion": "Segundo baño del inmueble"
+        },{
+            "url": "/imagenes/inmuebles/cochera.jpg",
+            "descripcion": "Cochera descubierta del inmueble"
         }],
+    "fotoPrincipal": "/imagenes/inmuebles/vestibulo.jpg",
     "ameneties": ["gimanasio", "Solarium", "Parrilla"],
     "usuario_id": "62c74af6982fe02f1c846133",
     "operacion": "venta",
@@ -97,4 +158,238 @@
     "montoOperacion": 90000,
     "nombreAnunciante": "Inmobiliaria Pirulo",
     "mailContacto": "piruloprop@pirulo.com.ar"
+}
+
+{
+    "tipo": "departamento",
+    "propiedadHorizontal": {
+        "cantPisos": 6,
+        "cantUnidades": 12,
+        "pisoInmueble": 3,
+        "cantAsensores": 1,
+        "Expensas": 12000
+    },
+    "direccion": {
+                    "calle": "Juana Azurduy",
+                    "altura": 2600
+                },
+    "antiguedad": 44,
+    "supTotal": 72,
+    "supCubierta": 59,
+    "cantAmbientes": 2,
+    "ambientes": [{
+        "medidas": "4x4",
+        "tipo": "dormitorio1"
+    },{
+        "medidas": "6x6",
+        "tipo": "living-comedor-cocina"
+    }
+    ],
+    "dormitorios": 1,
+    "banos": 1,
+    "cochera": false,
+    "titulo": "Impecable 2 ambientes",
+    "descripcion": "Departamento de 2 ambientes reciclado a nuevo. Tiene un amplio dormitorio en suite con living comedor y cocina integrada.",
+    "fotos": [{
+            "url": "/imagenes/inmuebles/cocinaComerdoLiving.jpg",
+            "descripcion": "Living Comedor con cocina integrada"
+        },{
+            "url": "/imagenes/inmuebles/vistaBalcon.jpg",
+            "descripcion": "Balcon del inmueble"
+        },{
+            "url": "/imagenes/inmuebles/dormitorioSuite1.jpg",
+            "descripcion": "Dormitorio Principal"
+        },{
+            "url": "/imagenes/inmuebles/banoSuite.jpg",
+            "descripcion": "Baño del dormitorio principal"
+        }],
+    "fotoPrincipal": "/imagenes/inmuebles/vistaBalcon.jpg",
+    "ameneties": ["Laundry"],
+    "usuario_id": "62c74af6982fe02f1c846133",
+    "operacion": "alquiler",
+    "monedaOperacion": "$",
+    "montoOperacion": 96000,
+    "nombreAnunciante": "Inmobiliaria Fantucho",
+    "mailContacto": "fantucho@fantucho.com.ar"
+}
+
+{
+    "tipo": "departamento",
+    "propiedadHorizontal": {
+        "cantPisos": 12,
+        "cantUnidades": 24,
+        "pisoInmueble": 6,
+        "cantAsensores": 1,
+        "Expensas": 42000
+    },
+    "direccion": {
+                    "calle": "Juana Manso",
+                    "altura": 1500
+                },
+    "antiguedad": 10,
+    "supTotal": 122,
+    "supCubierta": 109,
+    "cantAmbientes": 4,
+    "ambientes": [{
+        "medidas": "4x5",
+        "tipo": "dormitorio1"
+    },
+    {
+        "medidas": "3x4",
+        "tipo": "dormitorio2"
+    },{
+        "medidas": "6x4",
+        "tipo": "living"
+    },{
+        "medidas": "3x4",
+        "tipo": "dormitorio2"
+    }],
+    "dormitorios": 3,
+    "banos": 2,
+    "cochera": true,
+    "tipoCochera": {
+        "cantidad": 2,
+        "tipo": "descubierta"     
+    },
+    "titulo": "Impecable 4 ambientes en Puerto Madero",
+    "descripcion": "Departamento de 4 ambientes en torre nueva. Tiene un amplio dormitorio en suite con living comedor y cocina integrada. 2 dormitorios con amplias vistas a la Ciudad. Cochera propia fija",
+    "fotos": [{
+            "url": "/imagenes/inmuebles/cocinaComerdoLiving.jpg",
+            "descripcion": "Living Comedor con cocina integrada"
+        },{
+            "url": "/imagenes/inmuebles/vistaBalcon.jpg",
+            "descripcion": "Balcon del inmueble"
+        },{
+            "url": "/imagenes/inmuebles/dormitorioSuite1.jpg",
+            "descripcion": "Dormitorio Principal"
+        },{
+            "url": "/imagenes/inmuebles/vestidor1.jpg",
+            "descripcion": "Vestidor del dormitorio principal"
+        },{
+            "url": "/imagenes/inmuebles/banoSuite.jpg",
+            "descripcion": "Baño del dormitorio principal"
+        },{
+            "url": "/imagenes/inmuebles/dormitorio2.jpg",
+            "descripcion": "Segundo dormitorio del inmueble"
+        },{
+            "url": "/imagenes/inmuebles/bano2.jpg",
+            "descripcion": "Segundo baño del inmueble"
+        },{
+            "url": "/imagenes/inmuebles/cochera.jpg",
+            "descripcion": "Cochera descubierta del inmueble"
+        }],
+    "fotoPrincipal": "/imagenes/inmuebles/dormitorio2.jpg",
+    "ameneties": ["Laundry", "Parrilla", "Quincho", "Sum", "Gimnasio"],
+    "usuario_id": "62c74af6982fe02f1c846133",
+    "operacion": "alquiler",
+    "monedaOperacion": "U$S",
+    "montoOperacion": 5500,
+    "nombreAnunciante": "Inmobiliaria Madero",
+    "mailContacto": "madero@madero.com.ar"
+}
+
+{
+    "tipo": "departamento",
+    "propiedadHorizontal": {
+        "cantPisos": 6,
+        "cantUnidades": 12,
+        "pisoInmueble": 3,
+        "cantAsensores": 1,
+        "Expensas": 12000
+    },
+    "direccion": {
+                    "calle": "Thames",
+                    "altura": 2300
+                },
+    "antiguedad": 4,
+    "supTotal": 62,
+    "supCubierta": 53,
+    "cantAmbientes": 2,
+    "ambientes": [{
+        "medidas": "4x4",
+        "tipo": "dormitorio1"
+    },{
+        "medidas": "6x6",
+        "tipo": "living-comedor-cocina"
+    }
+    ],
+    "dormitorios": 1,
+    "banos": 1,
+    "cochera": false,
+    "titulo": "Impecable 2 ambientes",
+    "descripcion": "Departamento de 2 ambientes en edificio nuevo en el corazón de Palermo. Tiene un amplio dormitorio en suite con living comedor y cocina integrada.",
+    "fotos": [{
+            "url": "/imagenes/inmuebles/cocinaComerdoLiving.jpg",
+            "descripcion": "Living Comedor con cocina integrada"
+        },{
+            "url": "/imagenes/inmuebles/vistaBalcon.jpg",
+            "descripcion": "Balcon del inmueble"
+        },{
+            "url": "/imagenes/inmuebles/dormitorioSuite1.jpg",
+            "descripcion": "Dormitorio Principal"
+        },{
+            "url": "/imagenes/inmuebles/banoSuite.jpg",
+            "descripcion": "Baño del dormitorio principal"
+        }],
+    "fotoPrincipal": "/imagenes/inmuebles/cocinaComerdoLiving.jpg",
+    "ameneties": ["Laundry", "Gimnasio", "SUM"],
+    "usuario_id": "62c74af6982fe02f1c846133",
+    "operacion": "venta",
+    "monedaOperacion": "U$S",
+    "montoOperacion": 106000,
+    "nombreAnunciante": "Inmobiliaria Palermo",
+    "mailContacto": "palermo@palermo.com.ar"
+}
+
+{
+    "tipo": "departamento",
+    "propiedadHorizontal": {
+        "cantPisos": 8,
+        "cantUnidades": 16,
+        "pisoInmueble": 9,
+        "cantAsensores": 1,
+        "Expensas": 16000
+    },
+    "direccion": {
+                    "calle": "Pedro Lozano",
+                    "altura": 3900
+                },
+    "antiguedad": 14,
+    "supTotal": 82,
+    "supCubierta": 53,
+    "cantAmbientes": 2,
+    "ambientes": [{
+        "medidas": "4x4",
+        "tipo": "dormitorio1"
+    },{
+        "medidas": "6x6",
+        "tipo": "living-comedor-cocina"
+    }
+    ],
+    "dormitorios": 1,
+    "banos": 1,
+    "cochera": false,
+    "titulo": "Impecable 2 ambientes",
+    "descripcion": "Departamento de 2 ambientes en edificio nuevo en el corazón de Palermo. Tiene un amplio dormitorio en suite con living comedor y cocina integrada.",
+    "fotos": [{
+            "url": "/imagenes/inmuebles/cocinaComerdoLiving.jpg",
+            "descripcion": "Living Comedor con cocina integrada"
+        },{
+            "url": "/imagenes/inmuebles/vistaBalcon.jpg",
+            "descripcion": "Balcon del inmueble"
+        },{
+            "url": "/imagenes/inmuebles/dormitorioSuite1.jpg",
+            "descripcion": "Dormitorio Principal"
+        },{
+            "url": "/imagenes/inmuebles/banoSuite.jpg",
+            "descripcion": "Baño del dormitorio principal"
+        }],
+    "fotoPrincipal": "/imagenes/inmuebles/dormitorioSuite1.jpg",
+    "ameneties": ["Laundry"],
+    "usuario_id": "62c74af6982fe02f1c846133",
+    "operacion": "venta",
+    "monedaOperacion": "U$S",
+    "montoOperacion": 91000,
+    "nombreAnunciante": "Inmobiliaria Devoto",
+    "mailContacto": "devoto@devoto.com.ar"
 }

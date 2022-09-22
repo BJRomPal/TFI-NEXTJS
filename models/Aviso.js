@@ -33,6 +33,10 @@ const avisoSchema = new mongoose.Schema({
   },
   mailContacto: {
     type: String
+  },
+  destacado: {
+      type: Boolean,
+      default: false
   } 
 });
 

@@ -1,13 +1,10 @@
 import useEmblaCarousel from 'embla-carousel-react'
 import carouselStyles from '../styles/carousel.module.css';
 import { useState, useEffect, useCallback } from "react";
-import destacados from '../public/destacados';
 import CardInmueble from './CardInmueble';
 
-import Link from "next/link";
 
-
-export default function Carousel() {
+export default function Carousel({avisos}) {
   const [emblaRef, embla] = useEmblaCarousel({
     align: "start",
     loop: true,
@@ -43,18 +40,20 @@ export default function Carousel() {
       </div>
       <div className={carouselStyles.embla} ref={emblaRef}>
         <div className={carouselStyles.emblaContainer}>
-          {destacados.map((destacado) => (
+          {avisos.map((aviso) => (
             <CardInmueble
-              key={destacado.id} 
-              operacion={destacado.operacion}
-              descripcion={destacado.descripcion}
-              barrio={destacado.barrio}
-              precio={destacado.precio}
-              vendedor={destacado.vendedor}
-              foto={destacado.foto}
-              m2={destacado.m2}
-              ambientes={destacado.ambientes}
-              dormitorios={destacado.dormitorios}
+              key={aviso._id}
+              id={aviso._id} 
+              operacion={aviso.operacion}
+              descripcion={aviso.inmueble_id.titulo}
+              barrio={aviso.inmueble_id.direccion.barrio}
+              moneda={aviso.monedaOperacion}
+              precio={aviso.montoOperacion}
+              vendedor={aviso.nombreAnunciante}
+              foto={aviso.inmueble_id.fotoPrincipal}
+              m2={aviso.inmueble_id.supTotal}
+              ambientes={aviso.inmueble_id.cantAmbientes}
+              dormitorios={aviso.inmueble_id.dormitorios}
             />
           ))}
         </div>
@@ -66,7 +65,7 @@ export default function Carousel() {
           key={idx}
           onClick={() => scrollTo(idx)}
           />
-  ))}
+          ))}
       </div> 
     </>
   )
