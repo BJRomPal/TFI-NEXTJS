@@ -1,9 +1,78 @@
 .cuerpo {
     font-family: Monteserrat, sans-serif;
+    font-size: 18px;
 }
 
-.contenedorCarrousel{
+.contenedorInmueble{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+
+.datosInmueble{
+  display: flex;
+  flex-direction: column;
+}
+
+.datosOperacion{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.operacion {
+    color: #F24607;
+}
+
+.tipoYUbicacion { 
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+
+.contenedorIconos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.ambientes {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.tableHeader {
+  padding-top: 12px;
+  border: 1px solid #ddd;
+  padding-bottom: 6px;
+  text-align: left;
+  color: #083359;
+  font-weight: bold;
+  font-size: 22px;
+  padding-left: 10px;
+}
+
+.tableRow {
+  padding-top: 4px;
+  border: 1px solid #ddd;
+  padding-bottom: 4px;
+  text-align: left;
+  margin-bottom: 4px;
+  padding-left: 10px;
+}
+
+.vendedor {
+  padding-top: 20px;
+  line-height: 20px;
+}
+
+.descripcion{
+  max-width: 670px;
+  text-align: justify;
+  padding-left: 5%;
 }
