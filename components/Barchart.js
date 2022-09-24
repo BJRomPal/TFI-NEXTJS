@@ -5,7 +5,7 @@ import { scaleBand, scaleLinear, max} from 'd3';
 async function fetchData() {
   const configuration = {
     method: "get",
-    url: `http://localhost:3000/api/inmuebles/delitos`,
+    url: `https:/tfi-itba.vercel.app/api/inmuebles/delitos`,
     contentType: 'application/json',
     Accept: 'application/json',
   };

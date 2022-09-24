@@ -136,7 +136,7 @@ export async function getServerSideProps({ params }) {
 async function fethAviso(id) {
   const configuration = {
     method: "post",
-    url: 'http://localhost:3000/api/inmuebles/[id]',
+    url: 'https:/tfi-itba.vercel.app/api/inmuebles/[id]',
     data: id,
     contentType: 'application/json',
     Accept: 'application/json',
