@@ -17,7 +17,7 @@ const AvisoPage = () => {
   const [aviso, setAviso] = useState(null);
   const [inmuebleAviso, setInmuebleAviso] = useState(null) 
   useEffect(() => {
-    fethAviso({"id" : router.query.id})
+    fethAviso({id : router.query.id})
       .then((result) => {
         setAviso(result.data)
         if (result.data.inmueble_id.tipo === 'departamento') {
