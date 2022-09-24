@@ -81,8 +81,8 @@ export default function Header() {
       </div>
       <nav className={headerStyles.navStyle} >
         <a className={headerStyles.aInicio} href='/'>Inicio</a>
-        <a className={headerStyles.aLinks} href='/blog'>Blog</a>
-        <a className={headerStyles.aLinks} href='/buscar'>Buscar Inmuebles</a>
+        <a className={headerStyles.aLinks} href='/'>Blog</a>
+        <a className={headerStyles.aLinks} href='/'>Buscar Inmuebles</a>
       </nav>
     </header>      
   )
