@@ -140,6 +140,7 @@ async function fethAviso(id) {
     data: id,
     contentType: 'application/json',
     Accept: 'application/json',
+    mode: 'no-cors'
   };
     return await axios(configuration)
 }
