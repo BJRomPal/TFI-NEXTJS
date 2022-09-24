@@ -228,7 +228,7 @@ export default function Map({latitud, longitud}) {
 async function fetchData(api, data) {
   const configuration = {
     method: "post",
-    url: `http://localhost:3000/api/inmuebles/${api}`,
+    url: `./api/inmuebles/${api}`,
     data: data,
     contentType: 'application/json',
     Accept: 'application/json',

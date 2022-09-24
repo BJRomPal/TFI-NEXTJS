@@ -36,7 +36,7 @@ export default function Singin() {
     e.preventDefault()
     const configuration = {
       method: "post",
-      url: 'https:/tfi-itba.vercel.app/api/users/singin',
+      url: './api/users/singin',
       data: form,
       contentType: contentType,
       Accept: contentType,
