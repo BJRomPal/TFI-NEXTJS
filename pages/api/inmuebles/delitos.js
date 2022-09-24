@@ -12,5 +12,6 @@ export const config = {
       .collection('delitos')
       .find({})
       .toArray();
+
       response.json(delitos);
   }

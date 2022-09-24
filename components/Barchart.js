@@ -12,12 +12,12 @@ async function fetchData() {
   return await axios(configuration)
 }
 
-const width = 960;
-const height = 900;
+const width = 670;
+const height = 920;
 const margin = {
   top: 80,
   right:  20,
-  bottom: 30,
+  bottom: 40,
   left: 200
 }
 const innerHeight = height - margin.top - margin.bottom;
@@ -57,7 +57,7 @@ export default function Barchart({Barrio, titulo, delito}) {
       <defs>
         <style type="text/css">@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap");</style>
       </defs>
-      <text x={margin.left} y={60} style={{fontSize : "1.6em", fill: "#F24607", fontFamily: "Montserrat", fontWeight: "bold"}}>{titulo}</text>
+      <text x={margin.left} y={60} style={{fontSize : "0.7em", fill: "#F24607", fontFamily: "Montserrat", fontWeight: "bold"}}>{titulo}</text>
       <g transform={`translate(${margin.left}, ${margin.top})`}>
       {xScale.ticks().map(tickValue => (
         <g key={tickValue} transform={`translate(${xScale(tickValue)}, 0)`}>
@@ -83,7 +83,7 @@ export default function Barchart({Barrio, titulo, delito}) {
         fill={d.color} 
         />)}
         </g>
-        <text x={width - 105} y={height} style={{fontSize : "0.8em", fill: "#F24607", fontFamily: "Montserrat", fontWeight: "bold"}}>Fuente: GCBA</text>
+        <text x={width - 125} y={height} style={{fontSize : "0.8em", fill: "#F24607", fontFamily: "Montserrat", fontWeight: "bold"}}>Fuente: GCBA</text>
     </svg>
     )
 }

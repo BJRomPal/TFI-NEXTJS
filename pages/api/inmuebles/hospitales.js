@@ -25,6 +25,5 @@ export const config = {
         }
       })
       .toArray();
-
       response.json(hospitales);
   }

@@ -25,6 +25,13 @@ export default async function handler(request, response) {
             const inmueble = new Inmueble({
                 tipo: request.body.tipo,
                 casa: request.body.casa,
+                propiedadHorizontal: {
+                    cantPisos: request.body.propiedadHorizontal.cantPisos,
+                    cantUnidades: request.body.propiedadHorizontal.cantUnidades,
+                    pisoInmueble: request.body.propiedadHorizontal.pisoInmueble,
+                    cantAsensores: request.body.propiedadHorizontal.cantAsensores,
+                    Expensas: request.body.propiedadHorizontal.Expensas
+                },
                 direccion: {
                     calle: request.body.direccion.calle,
                     altura: request.body.direccion.altura,
@@ -61,7 +68,7 @@ export default async function handler(request, response) {
                 montoOperacion: request.body.montoOperacion,
                 nombreAnunciante: request.body.nombreAnunciante,
                 mailContacto: request.body.mailContacto,
-                destacado: false
+                destacado: true
             })
             aviso.save()
             .then((result) => {
