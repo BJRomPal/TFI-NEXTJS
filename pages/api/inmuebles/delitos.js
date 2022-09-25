@@ -7,7 +7,7 @@ export const config = {
   }
 
   export default async (request, response) => {
-    const {db} = await connectToDatabase();
+    const {db} = await dbConnect();
     const delitos = await db
       .collection('delitos')
       .find({})

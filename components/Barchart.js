@@ -5,7 +5,7 @@ import { scaleBand, scaleLinear, max} from 'd3';
 async function fetchData() {
   const configuration = {
     method: "get",
-    url: `./api/inmuebles/delitos`,
+    url: `./api/inmuebles/delito`,
     contentType: 'application/json',
     Accept: 'application/json',
   };
