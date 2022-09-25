@@ -239,7 +239,7 @@ async function fetchData(api, data) {
 async function fetchApi(id) {
   const configuration = {
     method: "post",
-    url: 'http://localhost:3000/api/apis/mapbox',
+    url: './api/apis/mapbox',
     data: id,
     contentType: 'application/json',
     Accept: 'application/json',
