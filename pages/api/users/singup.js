@@ -10,7 +10,7 @@ export const config = {
 
 export default async function handler(request, response) {
   dbConnect();
-  bcrypt.hash(request.body.password, 10)
+  await bcrypt.hash(request.body.password, 10)
       .then((hashedPassword) => {
       // crea el usuario usando el constructor de usuario del UserModel
       const user = new Usuario ({

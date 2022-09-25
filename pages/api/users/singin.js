@@ -12,7 +12,7 @@ export const config = {
 export default async function handler(request, response) {
   dbConnect();
   //Buscamos si existe un usuario registrado con el mail del request
-  Usuario.findOne({email: request.body.email}) 
+  await Usuario.findOne({email: request.body.email}) 
   .then((user) => {
     //Si esta registrado se chequea la contraseña
     bcrypt.compare(request.body.password, user.password)
