@@ -12,7 +12,7 @@ async function fetchData() {
   return await axios(configuration)
 }
 
-const width = 670;
+const width = 770;
 const height = 920;
 const margin = {
   top: 80,
@@ -62,14 +62,14 @@ export default function Barchart({Barrio, titulo, delito}) {
       {xScale.ticks().map(tickValue => (
         <g key={tickValue} transform={`translate(${xScale(tickValue)}, 0)`}>
           <line y2={innerHeight} stroke='#d3d3d3' />
-          <text style={{textAnchor: "middle", fontFamily: "Montserrat"}} dy=".71em" y={innerHeight + 5}>{tickValue}</text>
+          <text style={{textAnchor: "middle", fontFamily: "Montserrat", fontSize: "0.7em" }} dy=".71em" y={innerHeight + 5}>{tickValue}</text>
         </g>
       ))}
       <line x2={innerWidth} y1={innerHeight} y2={innerHeight} stroke='black' />
       {yScale.domain().map(tickValue => (
           <text
             key={tickValue}
-            style={{textAnchor: "end", fontSize: '.9em', fontFamily: "Montserrat"}} 
+            style={{textAnchor: "end", fontSize: '.7em', fontFamily: "Montserrat"}} 
             x={-7} 
             y={yScale(tickValue) + yScale.bandwidth() / 2 + 4}>{tickValue}</text>
       ))}
