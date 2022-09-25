@@ -10,7 +10,7 @@ export const config = {
 }
 
 export default async function handler(request, response) {
-  dbConnect();
+  await dbConnect();
   //Buscamos si existe un usuario registrado con el mail del request
   await Usuario.findOne({email: request.body.email}) 
   .then((user) => {
